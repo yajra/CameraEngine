@@ -38,7 +38,7 @@
 
 #### CocoaPods
 
-- Add `pod "CameraEngine"` to your Podfile.
+- Add `pod 'CameraEngine', :git => 'https://github.com/yajra/CameraEngine.git'` to your Podfile.
 - Run `pod install` or `pod update`.
 - import CameraEngine
 
