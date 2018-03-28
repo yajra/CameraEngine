@@ -7,15 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B4986866206B42110011FFC7 /* CameraEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4986865206B42110011FFC7 /* CameraEngine.framework */; };
+		B4986867206B42110011FFC7 /* CameraEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4986865206B42110011FFC7 /* CameraEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BB3B05D31D8C242A00165E2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3B05D21D8C242A00165E2C /* AppDelegate.swift */; };
 		BB3B05D51D8C242A00165E2C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3B05D41D8C242A00165E2C /* ViewController.swift */; };
 		BB3B05D81D8C242A00165E2C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB3B05D61D8C242A00165E2C /* Main.storyboard */; };
 		BB3B05DA1D8C242A00165E2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB3B05D91D8C242A00165E2C /* Assets.xcassets */; };
 		BB3B05DD1D8C242A00165E2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB3B05DB1D8C242A00165E2C /* LaunchScreen.storyboard */; };
-		BB9DFAD61D8C4D95001E7B35 /* CameraEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB9DFAD51D8C4D95001E7B35 /* CameraEngine.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		B4986868206B42120011FFC7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B4986867206B42110011FFC7 /* CameraEngine.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		B4986865206B42110011FFC7 /* CameraEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CameraEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB3B05CF1D8C242A00165E2C /* CameraEngineExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CameraEngineExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB3B05D21D8C242A00165E2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BB3B05D41D8C242A00165E2C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -31,7 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB9DFAD61D8C4D95001E7B35 /* CameraEngine.framework in Frameworks */,
+				B4986866206B42110011FFC7 /* CameraEngine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,6 +57,7 @@
 		BB3B05C61D8C242900165E2C = {
 			isa = PBXGroup;
 			children = (
+				B4986865206B42110011FFC7 /* CameraEngine.framework */,
 				BB3B05D11D8C242A00165E2C /* CameraEngineExample */,
 				BB3B05D01D8C242A00165E2C /* Products */,
 				BB9DFAD41D8C4D95001E7B35 /* Frameworks */,
@@ -86,6 +103,7 @@
 				BB3B05CB1D8C242A00165E2C /* Sources */,
 				BB3B05CC1D8C242A00165E2C /* Frameworks */,
 				BB3B05CD1D8C242A00165E2C /* Resources */,
+				B4986868206B42120011FFC7 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -103,12 +121,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Remi Robert";
 				TargetAttributes = {
 					BB3B05CE1D8C242A00165E2C = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 44Q2J6374R;
+						DevelopmentTeam = ZW354UQ7VZ;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -185,7 +204,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -193,7 +214,12 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -235,7 +261,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -243,7 +271,12 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -273,12 +306,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 44Q2J6374R;
+				DEVELOPMENT_TEAM = ZW354UQ7VZ;
 				INFOPLIST_FILE = CameraEngineExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.remirobert.CameraEngineExample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.objectbright.CameraEngineExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -286,12 +320,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 44Q2J6374R;
+				DEVELOPMENT_TEAM = ZW354UQ7VZ;
 				INFOPLIST_FILE = CameraEngineExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.remirobert.CameraEngineExample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.objectbright.CameraEngineExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
