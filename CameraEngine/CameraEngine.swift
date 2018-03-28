@@ -101,7 +101,7 @@ public class CameraEngine: NSObject {
         }
     }
     
-    public lazy var previewLayer: AVCaptureVideoPreviewLayer? = {
+    public lazy var previewLayer: AVCaptureVideoPreviewLayer! = {
         let layer =  AVCaptureVideoPreviewLayer(session: self.session)
         layer.videoGravity = AVLayerVideoGravity.resizeAspectFill
         return layer
@@ -300,7 +300,7 @@ public class CameraEngine: NSObject {
 				UIDevice.current.beginGeneratingDeviceOrientationNotifications()
 			}
             NotificationCenter.default.addObserver(forName: NSNotification.Name.UIDeviceOrientationDidChange, object: nil, queue: OperationQueue.main) { (_) -> Void in
-                self.previewLayer?.connection?.videoOrientation = AVCaptureVideoOrientation.orientationFromUIDeviceOrientation(UIDevice.current.orientation)
+                self.previewLayer.connection?.videoOrientation = AVCaptureVideoOrientation.orientationFromUIDeviceOrientation(UIDevice.current.orientation)
             }
         }
         else {
@@ -423,12 +423,12 @@ public extension CameraEngine {
 			let performFocus = currentDevice.isFocusModeSupported(.autoFocus) && currentDevice.isFocusPointOfInterestSupported
 			let performExposure = currentDevice.isExposureModeSupported(.autoExpose) && currentDevice.isExposurePointOfInterestSupported
             if performFocus || performExposure {
-                let focusPoint = self.previewLayer?.captureDevicePointConverted(fromLayerPoint: atPoint)
+                let focusPoint = self.previewLayer.captureDevicePointConverted(fromLayerPoint: atPoint)
                 do {
                     try currentDevice.lockForConfiguration()
 					
 					if performFocus {
-                        currentDevice.focusPointOfInterest = CGPoint(x: (focusPoint?.x)!, y: (focusPoint?.y)!)
+                        currentDevice.focusPointOfInterest = CGPoint(x: focusPoint.x, y: focusPoint.y)
 						if currentDevice.focusMode == AVCaptureDevice.FocusMode.locked {
 							currentDevice.focusMode = AVCaptureDevice.FocusMode.autoFocus
 						} else {
@@ -437,7 +437,7 @@ public extension CameraEngine {
 					}
 					
                     if performExposure {
-                        currentDevice.exposurePointOfInterest = CGPoint(x: (focusPoint?.x)!, y: (focusPoint?.y)!)
+                        currentDevice.exposurePointOfInterest = CGPoint(x: focusPoint.x, y: focusPoint.y)
                         if currentDevice.exposureMode == AVCaptureDevice.ExposureMode.locked {
                             currentDevice.exposureMode = AVCaptureDevice.ExposureMode.autoExpose
                         } else {
